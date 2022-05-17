@@ -82,7 +82,9 @@ export default class Canvas {
         if(this.particleTypes.length === 0) return;
 
         // select ParticleType
+
         let index = Math.floor(this.matrix[y][x] * (this.particleTypes.length))
+        index = index >= this.particleTypes.length ? index - 1 : index;
         let particle = this.particleTypes[index].clone();
 
 
