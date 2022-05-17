@@ -1,0 +1,86 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <meta name="theme-color" content="#fafafa">
+
+  <script src="/libraries/snap.svg-min.js"></script>
+  <script src="/libraries/lodash-core.js"></script>
+</head>
+
+<body>
+
+  <!-- Add your site or application content here -->
+  <div class="main">
+    <div class="controls">
+      <button id="applyButton">Apply</button>
+      <a id="download_link">Download</a>
+      <div class="slider">
+        <label for="sizeSlider">Size of particle</label>
+        <input type='range' id="sizeSlider" step="0.1" min="0" max="2" value="1"/>
+      </div>
+      <div class="slider">
+        <label for="minSizeSlider">Min size of particle</label>
+        <input type='range' id="minSizeSlider" step="0.05" min="0" max="1" value="0"/>
+      </div>
+      <div class="slider">
+        <label for="minSizeSlider">Space between particles</label>
+        <input type='range' id="stepSize" step="1" min="0" max="30" value="20"/>
+      </div>
+
+      <div class="uploadContainer">
+        <label>Schema</label>
+        <div class="inputWithImg">
+          <img id="matrixImg" src="img/sample.jpeg"/>
+          <input type='file' id="matrixUpload"/>
+        </div>
+      </div>
+
+      <div id="iconsContainer" class="uploadContainer">
+        <label>Particles</label>
+        <input type='file' id="iconUpload_0"/>
+      </div>
+      <div class="plusMinusButtonContainer">
+        <button id="addParticleButton">+</button>
+        <button id="subParticleButton">-</button>
+      </div>
+    </div>
+
+    <div>
+      <svg id="svg"></svg>
+      <section class="range-slider">
+        <span class="rangeValues"></span>
+        <input value="5" min="0" max="15" step="0.5" type="range">
+        <input value="10" min="0" max="15" step="0.5" type="range">
+        <input value="12" min="0" max="15" step="0.5" type="range">
+        <input value="4" min="0" max="15" step="0.5" type="range">
+        <input value="1" min="0" max="15" step="0.5" type="range">
+      </section>
+    </div>
+  </div>
+
+  <script src="js/vendor/modernizr-3.11.2.min.js"></script>
+  <script src="js/plugins.js"></script>
+
+  <script type="module" src="js/main.js"></script>
+
+</body>
+
+</html>
