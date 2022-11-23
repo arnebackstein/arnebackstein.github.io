@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JSPC</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <script type="module" src="InputStream.js" defer></script>
+    <script type="module" src="Ast.js" defer></script>
+    <script type="module" src="Lexer.js" defer></script>
+    <script type="module" src="Parser.js" defer></script>
+    <script type="module" src="script.js" defer></script>
+</head>
+<body>
+<div class="code">
+    <label>
+        <textarea id="codeInput" cols="50" rows="10">bool a = 5 == 15/3;
+if(a){
+    int b = 20;
+    b=2*b;
+}
+else{
+    int c = 2;
+}</textarea>
+    </label>
+    <div id="compiledCode"></div>
+    <div>
+        <table id="stack" class="stack">
+            <thead><tr><th>Stack</th></tr></thead>
+        </table>
+    </div>
+    <div>
+        <table id="symbolTable" class="symbolTable">
+            <thead><tr><th>Symbol Table</th></tr></thead>
+        </table>
+    </div>
+</div>
+<div>
+    <button id="compileButton">Compile</button>
+    <button id="debugButton">Run</button>
+</div>
+
+
+<div class="text">
+    <p>
+    The above textarea provides an input for the program code. By clicking on "Compile" it compiles the written code to instructions for the virtual stack machine that you see on the right. Clicking the "Run" button executes the instructions one by one on the virtual machine, while displaying the symbol table and stack.
+    Below you can see the context free grammar for the programming language implemented.
+    </p>
+</div>
+<code>
+    decl := type id { "=" expr } ";"<br/>
+    stmt := id "=" expr ";"<br/>
+    stmt := "{" stmtList "}"<br/>
+    stmt := if "(" expr ")" stmt<br/>
+    stmtList := stmt<br/>
+    stmtList := stmt stmtList<br/>
+    expr := term { ("<" | ">" | "<=" | ">=" | "==" | "!=") expr }<br/>
+    term := prod { ("+" | "-") term }<br/>
+    prod := prim { ( "*" | "\" ) prod }<br/>
+    prim := id | literal | "(" expr ")"<br/>
+    literal := NUM | BOOL<br/>
+    type := "int" | "bool"<br/>
+</code>
+</body>
+</html>

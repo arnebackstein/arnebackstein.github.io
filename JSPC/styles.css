@@ -1,0 +1,82 @@
+body {
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.text{
+    max-width: 45rem;
+    margin-inline: auto;
+}
+
+.code {
+    display: flex;
+    flex-direction: row;
+}
+
+#codeInput{
+    width: 10rem;
+    resize: none;
+    border: 1px solid lightgray;
+}
+
+#compiledCode > p{
+    font-family: sans-serif;
+    line-height: normal;
+    font-size: 0.6rem;
+    padding-inline: 2rem;
+    overflow: scroll;
+    max-height: 10rem;
+
+}
+
+#compiledCode > p > s{
+    background-color: gold;
+    text-decoration-line: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: sans-serif;
+}
+
+p {
+    line-height: 1.8;
+    font-size: 1rem;
+}
+
+.symbolTable {
+    font-family: sans-serif;
+    font-weight: normal;
+}
+
+.symbolTable th{
+    font-weight: normal;
+}
+
+.stack {
+    font-family: sans-serif;
+    text-align: center;
+    font-size: 1rem;
+    table-layout: fixed;
+    width: 5rem;
+}
+
+.stack td {
+    border: 1px solid lightgray;
+}
+
+.stack th{
+    font-weight: normal;
+}
+
+.stack tr {
+    padding: 0.2rem;
+    border: 0.5px solid black;
+}
+
+
+.stack tbody {
+    overflow: scroll;
+    max-height: 5rem;
+}
