@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Renderer</title>
+    <script type="module" src="js/Matrix.js" defer></script>
+    <script type="module" src="js/Renderer.js" defer></script>
+    <script type="module" src="script.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+<div class="controls">
+    <label>Color<input id="colorInput" type="color"/></label>
+    <label>Subdivision<input id="subdivisionsInput" type="number" max="3" min="0"/></label>
+    <label>Lighting<input id="lightningInput" type="checkbox" checked/></label>
+</div>
+<canvas id="glcanvas" width="620" height="620"></canvas>
+</body>
+</html>

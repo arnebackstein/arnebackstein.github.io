@@ -1,0 +1,34 @@
+*{
+    padding: 0;
+    margin: 0;
+    background: black;
+    text-align: center;
+}
+
+canvas{
+    margin-top: 5rem;
+}
+
+.controls {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    background: rgb(59, 59, 59);
+    color: white;
+    right: 1rem;
+    top: 1rem;
+    padding: 0.2rem;
+    border-radius: 0.2rem;
+}
+.controls > * {
+    text-align: right;
+    background: inherit;
+    border: none;
+    margin: 0.2rem;
+}
+
+input{
+    color: white;
+    max-width: 3rem;
+}
+
