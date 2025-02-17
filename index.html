@@ -1,16 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>github.io</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0a0a0a;
+            --surface: #111;
+            --border: rgba(255, 255, 255, 0.1);
+            --accent: rgb(0, 255, 255);
+            --text: rgba(255, 255, 255, 0.9);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        header {
+            border-bottom: 1px solid var(--border);
+            padding: 2rem 0;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent), transparent);
+            opacity: 0.3;
+        }
+
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+
+        .project-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            padding: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            box-shadow: 0 10px 30px rgba(0, 255, 255, 0.1);
+        }
+
+        .glow {
+            position: fixed;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(0, 255, 255, 0.15) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 2rem 0;
+            text-align: center;
+            opacity: 0.6;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            position: relative;
+        }
+
+        a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        a:hover::after {
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 2rem 1rem;
+            }
+        }
+    </style>
 </head>
+
 <body>
-    <h2>Projects</h2>
-<ul>
-    <li><a href="/JSPC">JS Compiler</a></li>
-    <li><a href="/renderer">JS Renderer</a></li>
-</ul>
-    <a href="https://github.com/arnebackstein/arnebackstein.github.io">View source code on Github <img src="/assets/GitHub-Mark-64px.png" style="height: 1em"/></a>
+    <div class="glow" style="top: 20%; left: 80%; z-index: -1;"></div>
+    <div class="glow" style="top: 60%; left: 10%; z-index: -1;"></div>
+
+    <div class="container">
+        <header>
+        </header>
+
+        <section>
+            <div class="project-grid">
+                <a href="/JSPC" class="project-card">
+                    <h3>C-like Compiler</h3>
+                    <p>Compiler for a C-like language based on a virtual stack machine.</p>
+                </a>
+                <a href="https://orderbooksimulation.streamlit.app/" class="project-card">
+                    <h3>Order Book Simulation</h3>
+                    <p>Simulation of an order book with market making and simulated institutional and retail traders.</p>
+                </a>
+                <a href="https://0xblackscholes.streamlit.app/" class="project-card">
+                    <h3>Black-Scholes Option Pricing</h3>
+                    <p>Black-Scholes option pricing model implentation.</p>
+                </a>
+                <a href="/renderer" class="project-card">
+                    <h3>3D Computer Graphics Renderer</h3>
+                    <p>Simple 3D computer graphics renderer written in pure javascript.</p>
+                </a>
+                <a href="https://0xjwt.vercel.app/" class="project-card">
+                    <h3>JWT Generator for HS256</h3>
+                    <p>Java Web Token generator for HMAC-SHA256 Signature validation and creation.</p>
+                </a>
+            </div>
+        </section>
+
+        <footer>
+            <p><em>Talk is cheap. Show me the code.</em> — Linus Torvalds</p>
+        </footer>
+    </div>
 </body>
+
 </html>
